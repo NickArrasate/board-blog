@@ -20,7 +20,9 @@ export default Ember.Route.extend({
           post.set(key,params[key]);
         }
       });
+      console.log(params);
       post.save();
+      this.transitionTo('admin');
     }
   }
 });

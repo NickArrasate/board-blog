@@ -1,1 +1,41 @@
-{{yield}}
+{{#if updatePostForm}}
+
+<form>
+
+
+  <div class="form-group">
+    <label for="category">Category:</label>
+      {{#x-select value=category}}
+        {{#x-option value="strategy"}}Strategy{{/x-option}}
+        {{#x-option value="family"}}Family{{/x-option}}
+        {{#x-option value="cooperative"}}Cooperative{{/x-option}}
+      {{/x-select}}
+  </div>
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    {{input value=title1 id="title1" placeholder=post.title}}
+  </div>
+
+  <div class="form-group">
+    <label for="copy">Copy</label>
+    {{input value=copy1 id="copy1" placeholder=post.copy}}
+  </div>
+
+  <div class="form-group">
+    <label for="author">Author</label>
+    {{input value=author1 id="author1" placeholder=post.author}}
+  </div>
+
+  <div class="form-group">
+    <label for="image">Image</label>
+    {{input value=image1 id="image1" placeholder=post.image}}
+  </div>
+
+  <button {{action 'update' post}}>Save</button>
+
+</form>
+
+{{else}}
+  <button {{action 'updatePostForm'}}>Update</button>
+{{/if}}
