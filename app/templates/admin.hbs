@@ -1,0 +1,11 @@
+{{new-post savePost="savePost" deletePost='deletePost' update="update"}}
+
+<ul>
+  {{#each model as |post|}}
+    <li>{{post.title}}</li>
+    <button {{action "deletePost" post}}>delete</button>
+    <button {{action "update" post}}>update</button>
+  {{/each}}
+</ul>
+
+<form>

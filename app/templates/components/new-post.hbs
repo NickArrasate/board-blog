@@ -1,0 +1,36 @@
+<h4>Add A Blog Post!</h4>
+
+<form>
+
+  <div class="form-group">
+    <label for="category">Category:</label>
+      {{#x-select value=category}}
+        {{#x-option value="strategy"}}Strategy{{/x-option}}
+        {{#x-option value="family"}}Family{{/x-option}}
+        {{#x-option value="cooperative"}}Cooperative{{/x-option}}
+      {{/x-select}}
+  </div>
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    {{input value=title id="title"}}
+  </div>
+
+  <div class="form-group">
+    <label for="copy">Copy</label>
+    {{input value=copy id="copy"}}
+  </div>
+
+  <div class="form-group">
+    <label for="author">Author</label>
+    {{input value=author id="author"}}
+  </div>
+
+  <div class="form-group">
+    <label for="image">Image</label>
+    {{input value=image id="image"}}
+  </div>
+
+  <button {{action 'savePost'}}>Save</button>
+
+</form>

@@ -1,0 +1,7 @@
+<h1>Welcome to our boardgame blog.</h1>
+
+<ul>
+    {{#each model as |post|}}
+      <li>{{#link-to 'game-post' post.id}}<h3>{{post.title}}</h3>{{/link-to}}<h4>By: {{post.author}}</h4></li>
+    {{/each}}
+</ul>
