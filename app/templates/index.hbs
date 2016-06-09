@@ -1,7 +1,15 @@
-<h1>Welcome to our boardgame blog.</h1>
+<div class='container'>
+<h1 class="title" id="intro">The World's Best Table Top Game Blog.</h1>
 
-<ul>
-    {{#each model as |post|}}
-      <li>{{#link-to 'game-post' post.id}}<h3>{{post.title}}</h3>{{/link-to}}<h4>By: {{post.author}}</h4></li>
-    {{/each}}
+<div id="recent">
+  <h3>Recent Posts:</h3>
+</div>
+
+<ul id='game-list'>
+  {{#each model as |post|}}
+  <div class='game-box'>
+    <li class='game-title'>{{#link-to 'game-post' post.id}}<h3 class='game-title'>{{post.title}}</h3>{{/link-to}}<h4>By: {{post.author}}</h4></li>
+  </div>
+  {{/each}}
 </ul>
+</div>

@@ -11,9 +11,13 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
     deletePost(post){
-      post.destroyRecord();
+      var comment_deletions = post.get('comments').map(function(comment){
+        return comment.destroyRecord();
+      });
+      Ember.RSVP.all(comment_deletions).then(function(){
+        return post.destroyRecord();
+      });
     },
-
     update(post, params) {
       Object.keys(params).forEach(function(key) {
         if(params[key]!==undefined) {

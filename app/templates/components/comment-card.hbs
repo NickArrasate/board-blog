@@ -1,0 +1,17 @@
+{{#if commentForm}}
+<form>
+
+  <label for="name">Name</label>
+  {{input value=name}}
+<br>
+  <label for="comment">Comment</label>
+  {{input value=comment}}
+  <button {{action "postComment"}}>Submit</button>
+
+</form>
+
+{{else}}
+
+<button {{action 'submitComment'}}>Add a Comment</button>
+
+{{/if}}

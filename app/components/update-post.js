@@ -14,7 +14,6 @@ export default Ember.Component.extend({
        image: this.get('image1'),
        category: this.get('category1'),
      };
-     console.log(params);
      this.set('updatePostForm', false);
      this.sendAction('update', post, params);
    }
